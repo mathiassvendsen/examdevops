@@ -90,3 +90,33 @@ Ok, lgtm. Actions kjører fortsatt OK. Publiserer til ECR med git hash.
 
 
 Del 4 - Metrics, overvåkning og alarmer
+
+* Oppgave 1
+
+OK. Terraform workflow kjører også OK i github actions! Vet ikke hva mer smart jeg kan skrive her =)
+
+
+
+* Oppgave 2
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Del 5 - Terraform og CloudWatch Dashboards
+
+* Oppgave 1
+
+testing
+
+
+* Oppgave 2
+
+OK. La til <if: github.event_name == 'pull_request'> under Terraform Plan og <if: github.ref == 'refs/heads/main' && github.event_name == 'push'> under Terraform Apply.
+
+
+* Oppgave 3
+
+testing
