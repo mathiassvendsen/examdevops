@@ -40,7 +40,7 @@ public class MetricsConfig {
 
             @Override
             public String get(String key) {
-                return configuration.aget(key);
+                return configuration.get(key);
             }
         };
     }
