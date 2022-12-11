@@ -55,12 +55,18 @@ Endret testinnhold fra [100] til [0].
 
 * Oppgave 3
 
-Aktiverte branch control via github settings i repo mitt. Er nå aktivt på "main" branch.
-Krever minst 1 PR for godkjent merge.
+- Start på frontsiden på repo
+- Gå til Settings/Branches og Se etter seksjonen "Branch Protection Rules".
+- Velg Add
+- Velg "main" Som branch
+- Velg "require a pull request before merging"
+- Velg "Require status check to pass before merging"
+- Velg "Do not allow bypassing the above settings"
+- I søkefeltet skriv inn teksten build som skal la deg velge "GitHub Actions".
+- Nå kan vi ikke Merge en pull request inn i Main uten at status sjekken er i orden. Det betyr at vår Workflow har kjørt OK.
+- Done! Du har nå branch protection på "main"!
 
-//// HUSK Å SETTE DETTE PÅ IGJEN!!!!!!!! ////
-//// SKRUDD AV FOR ENKLERE FREMGANG!!!!! ////
-
+Kilde: Forelesning 2
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,8 +88,11 @@ Fikset med å sørge for at alt kjører på JDK 11 istedenfor JDK 8. Actions kj�
 * Oppgave 3
 
 Ok, lgtm. Actions kjører fortsatt OK. Publiserer til ECR med git hash.
+I <docker.yml> så må kandidatnummer <1046> endres til sensor sitt ønsket navn.
+Skal ikke være noe verre enn dette.
 
-//// Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo. ////
+- docker tag shopifly 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<sensornavn>:$rev
+- docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<sensornavn>:$rev
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -99,7 +108,7 @@ OK. Terraform workflow kjører også OK i github actions! Vet ikke hva mer smart
 
 * Oppgave 2
 
-
+Ingen kommentar. Klarte ikke løse.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -109,7 +118,9 @@ Del 5 - Terraform og CloudWatch Dashboards
 
 * Oppgave 1
 
-testing
+Terraform forsøker å opprette ny bucket fordi den ikke har noen referanse eller "state" som den bruke til å vite
+om bucketen allerede eksisterer eller ikke.
+Flyttet Terraform state til backend i S3 bucket. Henter state fra AWS istedet for å generere ny hver gang det kjøres.
 
 
 * Oppgave 2
@@ -119,4 +130,4 @@ OK. La til <if: github.event_name == 'pull_request'> under Terraform Plan og <if
 
 * Oppgave 3
 
-testingtesting
+Ingen kommentar. Klarte ikke løse.
