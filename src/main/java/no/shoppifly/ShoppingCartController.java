@@ -56,7 +56,7 @@ public class ShoppingCartController implements ApplicationListener<ApplicationRe
         return cartService.getAllsCarts();
     }
     
-    
+    /*
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
@@ -75,6 +75,6 @@ public class ShoppingCartController implements ApplicationListener<ApplicationRe
                                 .sum())
                 .register(meterRegistry);
     }
-
+*/
 
 }
