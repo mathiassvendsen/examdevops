@@ -20,7 +20,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "This is a test!"
+        "title": "This is a"
       }
     }
   ]
