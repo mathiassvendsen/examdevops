@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationListener;
 import java.util.List;
 
 @RestController()
-public class ShoppingCartController implements ApplicationListener<ApplicationReadyEvent>{
+public class ShoppingCartController{
 
     @Autowired
     private final CartService cartService;
